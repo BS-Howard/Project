@@ -81,7 +81,13 @@ peopleControl.forEach((x) => {
     if (e.target.nextSibling.innerText > 0) {
       e.target.nextSibling.innerText = `${Number(e.target.nextSibling.innerText) - 1}`;
 
-      if (x.getAttribute('id') === 'toddler')
+      if (adultNumber.innerText === '0') {
+        temp = 0;
+        toddler = 0;
+        document.getElementById('child').querySelector('button').nextSibling.innerText = '0';
+        document.getElementById('toddler').querySelector('button').nextSibling.innerText = '0';
+      }
+      else if (x.getAttribute('id') === 'toddler')
         toddler -= 1;
       else
         temp -= 1;
@@ -126,12 +132,12 @@ function change(){
   locationPart.classList.add('toggle');
 }
 
-const picker = makePicker(t1);
-const picker2 = makePicker(t2);
+const picker = makePicker(t1,t2);
 
-function makePicker(el){
+function makePicker(el,e2){
   return new Litepicker({
     element: el,
+    elementEnd:e2,
     format: 'DD MMM YYYY',
     minDate: new Date() - 1,
     autoApply: true,
