@@ -19,6 +19,7 @@
     ></script>
   </head>
   <body>
+    <!-- 轉成vue時會直接包進template -->
     <div id="banner"></div>
     <header>
         <form action="#">
@@ -31,13 +32,13 @@
               </label>
             </div>
             <div class="lg-search">
-              <div class="search-div in-date">
+              <div  id="in-date-time" class="search-div in-date">
                   <span class="search-title">入住</span>
-                  <div id="in-date-time" class="placeholder">新增日期</div>
+                  <div class="placeholder">新增日期</div>
               </div>
-              <div class="search-div out-date">
+              <div id="out-date-time" class="search-div out-date">
                   <span class="search-title">退房</span>
-                  <div id="out-date-time" class="placeholder">新增日期</div>
+                  <div class="placeholder">新增日期</div>
               </div>
               <div class="search-div search-people">
                   <div>
@@ -53,7 +54,6 @@
           </div>
           <button class="sm-cancel">取消</button>
         </form>
-      </div>
       <div class="location">
         <ul>
           <li>

@@ -132,6 +132,11 @@ header form .searchBar .lg-search .search-people .lg-search-icon {
   border-radius: 50%;
 }
 
+header form .searchBar .lg-search .search-people .lg-search-icon.toggle {
+  width: 6rem;
+  border-radius: 28px;
+}
+
 header form .searchBar .lg-search .search-people .lg-search-icon:hover {
   background-color: #ce1739;
 }
@@ -149,6 +154,7 @@ header form .searchBar .lg-search .search-people .lg-search-icon .lg-search-icon
 header form .searchBar .search-title {
   margin-left: 1rem;
   font-weight: 700;
+  pointer-events: none;
 }
 
 header form .searchBar .sm-search-title {
@@ -171,6 +177,26 @@ header .location {
   height: 100vh;
   background-color: #fff;
   position: relative;
+}
+
+header .location.rwdShow {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: unset;
+  height: 100vh;
+}
+
+header .location.show {
+  width: 25rem;
+  display: block;
+  border-radius: 28px;
+  height: 40vh;
+}
+
+header .location.show.toggle {
+  display: none;
 }
 
 header .location ul {
@@ -271,6 +297,10 @@ header .people {
           flex-direction: column;
 }
 
+header .people.toggle {
+  opacity: 100;
+}
+
 header .people .people-control {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -320,57 +350,52 @@ header .people .people-control button {
 }
 
 @media screen and (min-width: 750px) {
-  .sm-cancel {
-    display: none !important;
+  header form .searchBar {
+    padding: 0rem;
+    border-radius: 50px;
   }
-  .searchBar {
-    padding: 0rem !important;
-    border-radius: 50px !important;
+  header form .searchBar .search-position {
+    width: 50%;
   }
-  .searchBar .search-position {
-    width: 50% !important;
+  header form .searchBar .search-position .sm-search-icon {
+    display: none;
   }
-  .searchBar .search-position:hover {
-    background-color: #e4e4e4 !important;
+  header form .searchBar .search-position .sm-search-title {
+    display: inline;
   }
-  .searchBar .search-position .sm-search-icon {
-    display: none !important;
-  }
-  .searchBar .search-position .sm-search-title {
-    display: inline !important;
-  }
-  .searchBar .lg-search {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -webkit-box-flex: 1 !important;
-        -ms-flex-positive: 1 !important;
-            flex-grow: 1 !important;
-  }
-  .searchBar .lg-search .search-div {
+  header form .searchBar .lg-search {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
   }
-  .searchBar .search-div {
+  header form .searchBar .lg-search .search-div {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  header form .searchBar .search-div {
     padding: 0.5rem 0;
     border-radius: 50px;
     cursor: pointer;
     border-right: 1px solid #c7c6c6;
   }
-  .searchBar .search-div label {
+  header form .searchBar .search-div label {
     cursor: pointer;
   }
-  .searchBar .search-div:hover {
-    background-color: #e4e4e4;
+  header form .searchBar .search-div:hover {
+    background-color: #e4e4e4 !important;
   }
-  .searchBar .search-div:first-child {
+  header form .searchBar .search-div:first-child {
     padding-left: 1rem;
   }
-  .searchBar .search-div .placeholder {
+  header form .searchBar .search-div .placeholder {
     margin-left: 0.9rem;
     color: #616060;
     font-size: 1.1rem;
+    pointer-events: none;
   }
 }
 /*# sourceMappingURL=SearchBar.css.map */
